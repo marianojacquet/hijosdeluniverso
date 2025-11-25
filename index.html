@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hijos del Universo N° 113 - Logia Masónica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Respetable Logia Hijos del Universo N° 113, bajo los auspicios de la Gran Logia Argentina de Libres y Aceptados Masones. Actividades, noticias y contacto en Ensenada, La Plata y Berisso."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg-main: #050510;
+      --bg-alt: #0d0f1a;
+      --accent: #f5c76a;
+      --accent-soft: rgba(245, 199, 106, 0.15);
+      --text-main: #f5f5f5;
+      --text-muted: #b1b5c4;
+      --card-bg: #121626;
+      --border-soft: rgba(255, 255, 255, 0.05);
+      --error: #ff4b6a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background-color: #02030a;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.35) 1px, transparent 0),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.28) 1px, transparent 0),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.25) 1.5px, transparent 0),
+        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.22) 1px, transparent 0),
+        radial-gradient(circle at top, #1b1c33 0, #050510 55%);
+      background-size: 220px 220px, 260px 260px, 300px 300px, 340px 340px, auto;
+      background-attachment: fixed;
+      color: var(--text-main);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* pequeño sol arriba a la izquierda */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 140px;
+      height: 140px;
+      top: -40px;
+      left: -20px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center,
+        #f5c76a 0,
+        #f49b3d 35%,
+        rgba(245, 199, 106, 0) 70%);
+      box-shadow:
+        0 0 25px rgba(245, 199, 106, 0.6),
+        0 0 80px rgba(245, 199, 106, 0.35);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* pequeña luna arriba a la derecha */
+    body::after {
+      content: "";
+      position: fixed;
+      width: 110px;
+      height: 110px;
+      top: 90px;
+      right: 10%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, #ffffff 0, #e3e9ff 35%, #c1c9ff 50%, rgba(255, 255, 255, 0) 70%);
+      box-shadow:
+        0 0 25px rgba(193, 201, 255, 0.6),
+        0 0 70px rgba(90, 110, 255, 0.35);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 5, 16, 0.92),
+        rgba(5, 5, 16, 0.6),
+        transparent
+      );
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.6rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.85rem;
+      line-height: 1.2;
+    }
+
+    .brand-symbol {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--accent);
+      box-shadow: 0 0 12px rgba(245, 199, 106, 0.4);
+    }
+
+    .brand-title {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #f5c76a, #ffdca1);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------- GENERAL LAYOUT ---------- */
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 5.5rem 1.25rem 3rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 680px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(4, 7, 20, 0.8);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(245, 199, 106, 0.6);
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border-soft);
+      position: relative;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(40px);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 220px;
+      height: 220px;
+      top: -20px;
+      left: -80px;
+      background: radial-gradient(circle at center, #f5c76a 0, transparent 70%);
+    }
+
+    .hero::after {
+      width: 260px;
+      height: 260px;
+      bottom: -60px;
+      right: -80px;
+      background: radial-gradient(circle at center, #4268ff 0, transparent 70%);
+      opacity: 0.2;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-highlight {
+      display: inline-block;
+      background: linear-gradient(90deg, #f5c76a, #ffdca1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 580px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta span {
+      display: block;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.55rem 1.4rem;
+      border: 1px solid transparent;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        border-color 0.12s ease, background 0.12s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f5c76a, #ffdca1);
+      color: #2b1b09;
+      box-shadow: 0 10px 25px rgba(245, 199, 106, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 35px rgba(245, 199, 106, 0.4);
+    }
+
+    .btn-outline {
+      background: rgba(7, 8, 20, 0.9);
+      border-color: var(--border-soft);
+      color: var(--text-muted);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 0 18px rgba(245, 199, 106, 0.3);
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 22px;
+      background: radial-gradient(circle at top, #181c3a 0, #070816 55%);
+      border: 1px solid var(--border-soft);
+      padding: 1.3rem 1.3rem 1.1rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
+      overflow: hidden;
+    }
+
+    .hero-card-orbit {
+      position: absolute;
+      inset: -40%;
+      opacity: 0.18;
+      background-image: radial-gradient(circle at 50% 20%, #ffffff 0, transparent 55%),
+        radial-gradient(circle at 12% 76%, #f5c76a 0, transparent 55%),
+        radial-gradient(circle at 88% 72%, #7da6ff 0, transparent 55%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card-badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-card-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-card-item {
+      padding: 0.55rem 0.7rem;
+      border-radius: 12px;
+      background: rgba(6, 9, 26, 0.92);
+      border: 1px solid var(--border-soft);
+    }
+
+    .hero-card-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-card-value {
+      font-weight: 500;
+    }
+
+    .hero-card-footer {
+      margin-top: 0.9rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ---------- CARDS & GRIDS ---------- */
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      border-radius: 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      padding: 1rem 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .card-title {
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .card-meta {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      opacity: 0.9;
+    }
+
+    .card-news-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .card-link span {
+      font-size: 0.9em;
+    }
+
+    .highlight-box {
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--accent-soft);
+      background: radial-gradient(circle at top, rgba(245, 199, 106, 0.18), transparent 55%);
+      font-size: 0.9rem;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    /* ---------- SECCIONES ESPECIALES ---------- */
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .list-check {
+      list-style: none;
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .list-check li {
+      margin-bottom: 0.35rem;
+      display: flex;
+      gap: 0.45rem;
+    }
+
+    .list-check li::before {
+      content: "◆";
+      color: var(--accent);
+      font-size: 0.7rem;
+      margin-top: 0.2rem;
+    }
+
+    .region-badge {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* ---------- CONTACTO ---------- */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 1.6rem;
+    }
+
+    .form {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .form-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-soft);
+      background: rgba(4, 6, 18, 0.95);
+      color: var(--text-main);
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(245, 199, 106, 0.3);
+      background: rgba(6, 9, 26, 0.98);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-help {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 1.5rem 1.25rem 2.4rem;
+      background: radial-gradient(circle at top, #11152b 0, #050510 50%);
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner a {
+      color: var(--accent);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 890px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .two-column,
+      .contact-grid,
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        font-size: 0.75rem;
+        row-gap: 0.4rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        margin-top: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-symbol">∴</div>
+        <div>
+          <div class="brand-title">Hijos del Universo N° 113</div>
+          <div class="brand-subtitle">
+            Bajo los auspicios de la Gran Logia Argentina de Libres y Aceptados Masones
+          </div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#que-es">Masonería</a>
+        <a href="#logia">La Logia</a>
+        <a href="#actividades">Actividades</a>
+        <a href="#ensenada">Ensenada</a>
+        <a href="#region">Región</a>
+        <a href="#ingreso">Cómo ingresar</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / INICIO -->
+    <section id="inicio" class="hero">
+      <div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Respetable Logia Hijos del Universo N° 113
+        </div>
+        <h1 class="hero-title">
+          Hijos del Universo N° 113
+          <span class="hero-highlight">Masonería en toda la región</span>
+        </h1>
+        <p class="hero-subtitle">
+          Somos una Logia masónica que trabaja en la ciudad de Ensenada, bajo la
+          jurisdicción y regularidad de la Gran Logia Argentina de Libres y Aceptados
+          Masones de la República Argentina. Nuestro propósito es el perfeccionamiento
+          moral e intelectual de las personas, y el servicio a la comunidad.
+        </p>
+        <div class="hero-meta">
+          <span>Valores: Libertad · Igualdad · Fraternidad.</span>
+          <span>Lema de la Masonería Argentina: Ciencia · Justicia · Trabajo.</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#ingreso" class="btn btn-primary">
+            Quiero más información
+            <span>↗</span>
+          </a>
+          <a href="#actividades" class="btn btn-outline">
+            Ver actividades de la Logia
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Información institucional">
+        <div class="hero-card-orbit"></div>
+        <div class="hero-card-inner">
+          <div class="hero-card-badge">Masonería Regular</div>
+          <h2 class="hero-card-title">Gran Logia Argentina</h2>
+          <div class="hero-card-grid">
+            <div class="hero-card-item">
+              <div class="hero-card-label">Obediencia</div>
+              <div class="hero-card-value">Gran Logia de la Argentina</div>
+            </div>
+            <div class="hero-card-item">
+              <div class="hero-card-label">Naturaleza</div>
+              <div class="hero-card-value">Filantrópica, filosófica y progresista</div>
+            </div>
+            <div class="hero-card-item">
+              <div class="hero-card-label">Finalidad</div>
+              <div class="hero-card-value">Perfeccionamiento moral e intelectual</div>
+            </div>
+            <div class="hero-card-item">
+              <div class="hero-card-label">Alcance</div>
+              <div class="hero-card-value">En todo el país y en el mundo</div>
+            </div>
+          </div>
+          <p class="hero-card-footer">
+            La Logia Hijos del Universo N° 113 se integra a la Masonería Regular
+            argentina, respetando sus principios, usos y costumbres.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ¿QUÉ ES LA MASONERÍA? -->
+    <section id="que-es">
+      <div class="section-header">
+        <div class="section-kicker">Masonería en la Argentina</div>
+        <h2 class="section-title">¿Qué es la Masonería?</h2>
+        <p class="section-subtitle">
+          La Masonería es una institución iniciática, simbólica y tradicional que
+          trabaja sobre el desarrollo integral de las personas. En la Argentina se
+          organiza a través de la Gran Logia de la Argentina, que promueve una visión
+          humanista, laica y republicana de la sociedad.
+        </p>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <div class="card">
+            <div class="card-tag">Principios</div>
+            <h3 class="card-title">Libertad, Igualdad y Fraternidad</h3>
+            <p>
+              La Masonería se sostiene sobre principios que buscan el perfeccionamiento
+              moral e intelectual de cada persona, impulsando el pensamiento crítico, el
+              respeto por las leyes y la construcción de una sociedad más justa,
+              equitativa e inclusiva.
+            </p>
+            <ul class="list-check">
+              <li>Respeto a la dignidad humana y a la diversidad de ideas.</li>
+              <li>Búsqueda permanente de la verdad y el conocimiento.</li>
+              <li>Compromiso con la ética en la vida pública y privada.</li>
+              <li>Servicio responsable hacia la comunidad.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom: 0.8rem">
+            <div class="card-tag">Preguntas frecuentes</div>
+            <h3 class="card-title">¿Quiénes pueden acercarse?</h3>
+            <p>
+              Para ingresar a la Masonería Argentina se requiere ser una persona libre y
+              de buenas costumbres, con mayoría de edad y capacidad para sostenerse a sí
+              misma y a su familia. No se exigen títulos académicos ni posición
+              económica, sino rectitud de conducta y deseo de superación.
+            </p>
+          </div>
+          <div class="highlight-box">
+            <strong>Importante:</strong> la Masonería no es una religión ni un partido
+            político. En los trabajos masónicos se evita deliberadamente la discusión
+            partidaria o confesional, favoreciendo un clima de respeto y tolerancia hacia
+            todas las creencias.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LA LOGIA -->
+    <section id="logia">
+      <div class="section-header">
+        <div class="section-kicker">Nuestra Logia</div>
+        <h2 class="section-title">Hijos del Universo N° 113</h2>
+        <p class="section-subtitle">
+          La Respetable Logia Hijos del Universo N° 113 trabaja bajo la jurisdicción de
+          la Gran Logia Argentina, siguiendo el rito, la liturgia y las normas de la
+          Masonería Regular. Somos un espacio de reflexión, estudio y fraternidad, que
+          busca proyectar ese trabajo simbólico en acciones concretas hacia la sociedad.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-tag">Identidad</div>
+          <h3 class="card-title">Simbolismo del Universo</h3>
+          <p>
+            Nuestro nombre remite a la idea de un universo ordenado, regido por leyes
+            morales y naturales que el ser humano puede estudiar, comprender y respetar.
+            Cada trabajo de Logia es una oportunidad para expandir la conciencia y
+            acrecentar la luz interior.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Trabajo interno</div>
+          <h3 class="card-title">Rito y reflexión</h3>
+          <p>
+            En nuestros encuentros se abordan temas filosóficos, éticos, históricos y
+            simbólicos. A través del rito, los símbolos y la palabra compartida buscamos
+            mejorar como personas y como ciudadanos, con un fuerte sentido de
+            responsabilidad social.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Vocación social</div>
+          <h3 class="card-title">Compromiso con la comunidad</h3>
+          <p>
+            La Logia impulsa actividades de formación, diálogo y servicio que buscan
+            aportar al desarrollo de Ensenada y la región. La discreción de nuestra
+            Orden nunca implica desinterés por la realidad, sino un compromiso sereno y
+            responsable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVIDADES -->
+    <section id="actividades">
+      <div class="section-header">
+        <div class="section-kicker">Vida masónica</div>
+        <h2 class="section-title">Actividades de la Logia</h2>
+        <p class="section-subtitle">
+          La vida de una Logia se construye en torno al trabajo constante. Algunas de las
+          actividades que desarrollamos incluyen:
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-tag">Trabajos en Logia</div>
+          <h3 class="card-title">Tenidas ordinarias</h3>
+          <p>
+            Reuniones periódicas donde se realizan los trabajos rituales, se presentan
+            planchas de reflexión y se debaten ideas en un marco de respeto y orden
+            simbólico.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Formación</div>
+          <h3 class="card-title">Estudio y reflexión</h3>
+          <p>
+            Espacios de formación masónica, filosófica e histórica, con lecturas
+            guiadas, charlas y talleres orientados a fortalecer el pensamiento crítico.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Acción social</div>
+          <h3 class="card-title">Servicio a la comunidad</h3>
+          <p>
+            Iniciativas solidarias, apoyo a instituciones locales y proyectos que
+            promuevan la educación, la salud y la cultura en Ensenada y zona.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Cultura</div>
+          <h3 class="card-title">Encuentros y conferencias</h3>
+          <p>
+            Organización de actividades abiertas o coordinadas con otras Logias y
+            entidades, para dialogar sobre temas de actualidad, derechos humanos, historia
+            y pensamiento crítico.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENSENADA -->
+    <section id="ensenada">
+      <div class="section-header">
+        <div class="section-kicker">Territorio</div>
+        <h2 class="section-title">La Logia en Ensenada</h2>
+        <p class="section-subtitle">
+          Ensenada es un punto estratégico de la región capital, con fuerte identidad
+          portuaria, industrial y barrial. Allí, la Logia Hijos del Universo N° 113
+          desarrolla su tarea silenciosa pero constante, promoviendo el diálogo, la
+          educación y la convivencia pacífica.
+        </p>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <div class="card">
+            <div class="card-tag">Presencia local</div>
+            <h3 class="card-title">Raíces en la comunidad</h3>
+            <p>
+              El trabajo masónico se proyecta hacia la ciudad a través de iniciativas
+              culturales, colaboración con instituciones, participación en espacios de
+              reflexión y apoyo a proyectos educativos y sociales.
+            </p>
+            <ul class="list-check">
+              <li>Vínculos con organizaciones sociales, culturales y educativas.</li>
+              <li>Actividades orientadas a la promoción de valores republicanos.</li>
+              <li>Espacios de diálogo sereno frente a los desafíos actuales.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-tag">Proyección</div>
+            <h3 class="card-title">Un trabajo discreto, no secreto</h3>
+            <p>
+              La Masonería mantiene reserva sobre su vida interna, pero no se oculta de
+              la sociedad. La Logia está abierta al contacto de quienes, con seriedad y
+              buena voluntad, desean conocer más y eventualmente iniciar un proceso de
+              ingreso.
+            </p>
+            <p class="card-meta">
+              Si vivís en Ensenada o zonas cercanas y querés saber más sobre nuestra
+              actividad, podés escribirnos desde la sección de contacto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGIÓN LA PLATA - BERISSO - ENSENADA -->
+    <section id="region">
+      <div class="section-header">
+        <div class="section-kicker">Región capital</div>
+        <h2 class="section-title">Noticias masónicas de La Plata, Berisso y Ensenada</h2>
+        <p class="section-subtitle">
+          Esta sección está pensada para compartir novedades masónicas de la región:
+          actividades conjuntas, conferencias, acciones solidarias, comunicados y
+          anuncios abiertos a la comunidad.
+        </p>
+      </div>
+
+      <p class="region-badge">
+        Región: La Plata · Berisso · Ensenada &mdash; Bajo los auspicios de la Gran Logia
+        de la Argentina.
+      </p>
+
+      <div class="grid-3">
+        <!-- Ejemplo de noticia 1 -->
+        <article class="card">
+          <div class="card-news-date">[Fecha] · Regional</div>
+          <h3 class="card-title">Encuentro regional de Logias de la zona capital</h3>
+          <p>
+            Resumen breve de una actividad conjunta entre Logias de La Plata, Berisso y
+            Ensenada: conferencias, trabajos en común, visitas y proyectos compartidos.
+          </p>
+          <a href="#contacto" class="card-link">
+            Publicar una nota
+            <span>↗</span>
+          </a>
+        </article>
+
+        <!-- Ejemplo de noticia 2 -->
+        <article class="card">
+          <div class="card-news-date">[Fecha] · La Plata</div>
+          <h3 class="card-title">Ciclo de charlas abiertas sobre historia y ciudadanía</h3>
+          <p>
+            Espacio de reflexión sobre la historia argentina, el constitucionalismo, los
+            derechos humanos y el rol del ciudadano en una república democrática.
+          </p>
+          <div class="card-meta">
+            Texto editable para informar lugar, horario y modalidad de la actividad.
+          </div>
+        </article>
+
+        <!-- Ejemplo de noticia 3 -->
+        <article class="card">
+          <div class="card-news-date">[Fecha] · Ensenada/Berisso</div>
+          <h3 class="card-title">Jornadas solidarias y trabajo comunitario</h3>
+          <p>
+            Actividades de apoyo a instituciones educativas, culturales o de salud de la
+            región, coordinadas por las Logias que trabajan en la zona.
+          </p>
+          <div class="card-meta">
+            Podés usar este espacio para difundir próximas campañas e informar resultados.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CÓMO INGRESAR -->
+    <section id="ingreso">
+      <div class="section-header">
+        <div class="section-kicker">Ingresar a la Masonería</div>
+        <h2 class="section-title">¿Cómo iniciar el camino masónico?</h2>
+        <p class="section-subtitle">
+          El ingreso a la Masonería es un proceso serio y gradual. Comienza con el
+          acercamiento personal, continúa con entrevistas y, si corresponde, con la
+          presentación formal de una solicitud de ingreso ante la Gran Logia Argentina.
+        </p>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <div class="card">
+            <div class="card-tag">Pasos habituales</div>
+            <h3 class="card-title">Acercamiento, diálogo y solicitud</h3>
+            <ul class="list-check">
+              <li>
+                <strong>Primer contacto:</strong> envío de un mensaje presentándote,
+                indicando quién sos y por qué te interesa la Masonería.
+              </li>
+              <li>
+                <strong>Entrevistas:</strong> encuentros personales con hermanos
+                designados para conocer tu historia, motivaciones y dudas.
+              </li>
+              <li>
+                <strong>Solicitud formal:</strong> si las condiciones están dadas, se
+                tramita una solicitud de ingreso según las normas de la Gran Logia.
+              </li>
+              <li>
+                <strong>Proceso de evaluación:</strong> la Logia y la Obediencia
+                analizan cada caso, resguardando la seriedad y regularidad del ingreso.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <p>
+              Para más información sobre el procedimiento oficial de ingreso a la
+              Masonería Argentina, también podés consultar el sitio de la
+              <strong>Gran Logia de la Argentina de Libres y Aceptados Masones</strong>.
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+              Si residís en Ensenada, La Plata o Berisso y querés acercarte a la Logia
+              Hijos del Universo N° 113, podés escribirnos a través del formulario de
+              contacto indicado más abajo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="section-header">
+        <div class="section-kicker">Contacto</div>
+        <h2 class="section-title">Ponete en contacto con la Logia</h2>
+        <p class="section-subtitle">
+          Este formulario está destinado a personas interesadas en conocer más sobre la
+          Masonería, a instituciones que deseen vincularse y a hermanos que busquen
+          contacto con la Logia en la región.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <form class="form">
+            <div class="form-row">
+              <div>
+                <label class="form-label" for="nombre">Nombre completo</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Tu nombre y apellido"
+                  required
+                />
+              </div>
+              <div>
+                <label class="form-label" for="email">Correo electrónico</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="tu@correo.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label class="form-label" for="ciudad">Ciudad</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="ciudad"
+                  name="ciudad"
+                  placeholder="Ensenada, La Plata, Berisso, etc."
+                />
+              </div>
+              <div>
+                <label class="form-label" for="motivo">Motivo del contacto</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="motivo"
+                  name="motivo"
+                  placeholder="Consulta, interés en ingresar, institución, etc."
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="form-label" for="mensaje">Mensaje</label>
+              <textarea
+                class="form-textarea"
+                id="mensaje"
+                name="mensaje"
+                placeholder="Contanos brevemente en qué podemos ayudarte..."
+                required
+              ></textarea>
+              <p class="form-help">
+                La información enviada será tratada con absoluta reserva y sólo será
+                utilizada para responder tu consulta.
+              </p>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Enviar mensaje
+              <span>✉</span>
+            </button>
+          </form>
+        </div>
+
+        <div>
+          <div class="card">
+            <div class="card-tag">Información institucional</div>
+            <h3 class="card-title">Datos de referencia</h3>
+            <p>
+              Respetable Logia Hijos del Universo N° 113<br />
+              Bajo los auspicios de la Gran Logia de la Argentina de Libres y Aceptados
+              Masones.
+            </p>
+            <p class="card-meta" style="margin-top: 0.6rem;">
+              Dirección física, días y horarios de trabajo, y datos de contacto
+              específicos pueden incorporarse aquí según disposición de la Logia.
+            </p>
+          </div>
+
+          <div class="card" style="margin-top: 0.9rem;">
+            <div class="card-tag">Privacidad</div>
+            <h3 class="card-title">Reserva y trato respetuoso</h3>
+            <p>
+              Toda consulta es atendida con respeto y discreción. La Masonería reconoce
+              la libertad de conciencia de cada persona y no solicita adhesión a ninguna
+              doctrina política o religiosa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        © <span id="year"></span> Respetable Logia Hijos del Universo N° 113.
+        Todos los derechos reservados.
+      </div>
+      <div>
+        Sitio inspirado en los principios y valores de la
+        <a href="https://www.masoneria-argentina.org.ar/" target="_blank" rel="noopener">
+          Gran Logia de la Argentina
+        </a>.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico en el pie de página
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

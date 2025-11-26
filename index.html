@@ -1143,75 +1143,83 @@
 
       <div class="contact-grid">
         <div>
-          <form class="form">
-            <div class="form-row">
-              <div>
-                <label class="form-label" for="nombre">Nombre completo</label>
-                <input
-                  class="form-input"
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  placeholder="Tu nombre y apellido"
-                  required
-                />
-              </div>
-              <div>
-                <label class="form-label" for="email">Correo electrónico</label>
-                <input
-                  class="form-input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="tu@correo.com"
-                  required
-                />
-              </div>
-            </div>
+          <form
+ class="form"
+  action="https://formspree.io/f/mnnkajnb"  <!-- ⚠️ reemplazá por tu URL real -->
+  method="POST"
+>
+  <div class="form-row">
+    <div>
+      <label class="form-label" for="nombre">Nombre completo</label>
+      <input
+        class="form-input"
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Tu nombre y apellido"
+        required
+      />
+    </div>
+    <div>
+      <label class="form-label" for="email">Correo electrónico</label>
+      <input
+        class="form-input"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="tu@correo.com"
+        required
+      />
+    </div>
+  </div>
 
-            <div class="form-row">
-              <div>
-                <label class="form-label" for="ciudad">Ciudad</label>
-                <input
-                  class="form-input"
-                  type="text"
-                  id="ciudad"
-                  name="ciudad"
-                  placeholder="Ensenada, La Plata, Berisso, etc."
-                />
-              </div>
-              <div>
-                <label class="form-label" for="motivo">Motivo del contacto</label>
-                <input
-                  class="form-input"
-                  type="text"
-                  id="motivo"
-                  name="motivo"
-                  placeholder="Consulta, interés en ingresar, institución, etc."
-                />
-              </div>
-            </div>
+  <div class="form-row">
+    <div>
+      <label class="form-label" for="ciudad">Ciudad</label>
+      <input
+        class="form-input"
+        type="text"
+        id="ciudad"
+        name="ciudad"
+        placeholder="Ensenada, La Plata, Berisso, etc."
+      />
+    </div>
+    <div>
+      <label class="form-label" for="motivo">Motivo del contacto</label>
+      <input
+        class="form-input"
+        type="text"
+        id="motivo"
+        name="motivo"
+        placeholder="Consulta, interés en ingresar, institución, etc."
+      />
+    </div>
+  </div>
 
-            <div>
-              <label class="form-label" for="mensaje">Mensaje</label>
-              <textarea
-                class="form-textarea"
-                id="mensaje"
-                name="mensaje"
-                placeholder="Contanos brevemente en qué podemos ayudarte..."
-                required
-              ></textarea>
-              <p class="form-help">
-                La información enviada será tratada con absoluta reserva y sólo será
-                utilizada para responder tu consulta.
-              </p>
-            </div>
+  <div>
+    <label class="form-label" for="mensaje">Mensaje</label>
+    <textarea
+      class="form-textarea"
+      id="mensaje"
+      name="mensaje"
+      placeholder="Contanos brevemente en qué podemos ayudarte..."
+      required
+    ></textarea>
+    <p class="form-help">
+      La información enviada será tratada con absoluta reserva y sólo será
+      utilizada para responder tu consulta.
+    </p>
+  </div>
 
-            <button type="submit" class="btn btn-primary">
-              Enviar mensaje
-              <span>✉</span>
-            </button>
-          </form>
+  <!-- Campo oculto para saber desde dónde se envió -->
+  <input type="hidden" name="origen" value="Formulario sitio Hijos del Universo 113" />
+
+  <button type="submit" class="btn btn-primary">
+    Enviar mensaje
+    <span>✉</span>
+  </button>
+</form>
+
         </div>
 
         <div>
@@ -1265,4 +1273,5 @@
   </script>
 </body>
 </html>
+
 

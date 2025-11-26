@@ -1143,11 +1143,7 @@
 
       <div class="contact-grid">
         <div>
-          <form
- class="form"
-  action="https://formspree.io/f/mnnkajnb"  <!-- ⚠️ reemplazá por tu URL real -->
-  method="POST"
->
+          <form class="form" action="https://formspree.io/f/mnnkajnb" method="POST">
   <div class="form-row">
     <div>
       <label class="form-label" for="nombre">Nombre completo</label>
@@ -1211,14 +1207,25 @@
     </p>
   </div>
 
-  <!-- Campo oculto para saber desde dónde se envió -->
-  <input type="hidden" name="origen" value="Formulario sitio Hijos del Universo 113" />
+  <!-- Campos ocultos útiles -->
+  <input
+    type="hidden"
+    name="_subject"
+    value="Nuevo mensaje desde la web de Hijos del Universo N° 113"
+  />
+  <input
+    type="hidden"
+    name="origen"
+    value="Formulario sitio Hijos del Universo N° 113"
+  />
+  <input type="hidden" name="_language" value="es" />
 
   <button type="submit" class="btn btn-primary">
     Enviar mensaje
     <span>✉</span>
   </button>
 </form>
+
 
         </div>
 
@@ -1273,5 +1280,6 @@
   </script>
 </body>
 </html>
+
 
 

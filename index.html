@@ -496,6 +496,37 @@
       gap: 1.4rem;
     }
 
+    .social-links {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+   }
+
+    .social-link {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.45rem;
+     text-decoration: none;
+     color: var(--accent);
+  }
+
+   .social-link:hover {
+     text-decoration: underline;
+  }
+
+   .social-icon {
+     width: 22px;
+     height: 22px;
+     border-radius: 999px;
+     border: 1px solid var(--accent-soft);
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 0.85rem;
+  }
+
     .card {
       border-radius: 18px;
       background: var(--card-bg);
@@ -1229,32 +1260,56 @@
 
         </div>
 
-        <div>
-          <div class="card">
-            <div class="card-tag">Información institucional</div>
-            <h3 class="card-title">Datos de referencia</h3>
-            <p>
-              Respetable Logia Hijos del Universo N° 113<br />
-              Bajo los auspicios de la Gran Logia de la Argentina de Libres y Aceptados
-              Masones.
-            </p>
-            <p class="card-meta" style="margin-top: 0.6rem;">
-              Dirección física, días y horarios de trabajo, y datos de contacto
-              específicos pueden incorporarse aquí según disposición de la Logia.
-            </p>
-          </div>
+      <div>
+  <div class="card">
+    <div class="card-tag">Información institucional</div>
+    <h3 class="card-title">Datos de referencia</h3>
+    <p>
+      Respetable Logia Hijos del Universo N° 113<br />
+      Bajo los auspicios de la Gran Logia de la Argentina de Libres y Aceptados
+      Masones.
+    </p>
+    <p class="card-meta" style="margin-top: 0.6rem;">
+      Dirección física, días y horarios de trabajo, y datos de contacto
+      específicos pueden incorporarse aquí según disposición de la Logia.
+    </p>
+  </div>
 
-          <div class="card" style="margin-top: 0.9rem;">
-            <div class="card-tag">Privacidad</div>
-            <h3 class="card-title">Reserva y trato respetuoso</h3>
-            <p>
-              Toda consulta es atendida con respeto y discreción. La Masonería reconoce
-              la libertad de conciencia de cada persona y no solicita adhesión a ninguna
-              doctrina política o religiosa.
-            </p>
-          </div>
-        </div>
-      </div>
+  <div class="card" style="margin-top: 0.9rem;">
+    <div class="card-tag">Privacidad</div>
+    <h3 class="card-title">Reserva y trato respetuoso</h3>
+    <p>
+      Toda consulta es atendida con respeto y discreción. La Masonería reconoce
+      la libertad de conciencia de cada persona y no solicita adhesión a ninguna
+      doctrina política o religiosa.
+    </p>
+  </div>
+
+  <div class="card" style="margin-top: 0.9rem;">
+    <div class="card-tag">Redes sociales</div>
+    <h3 class="card-title">Seguinos en Instagram</h3>
+    <p>
+      Compartimos novedades, actividades y recordatorios de la Logia y de la
+      región en nuestra cuenta oficial:
+    </p>
+    <div class="social-links">
+      <a
+        class="social-link"
+        href="https://www.instagram.com/tu_usuario_de_instagram/"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="social-icon">IG</span>
+        <span>@tu_usuario_de_instagram</span>
+      </a>
+    </div>
+    <p class="card-meta" style="margin-top: 0.4rem;">
+      Si lo deseás, podés escribirnos por mensaje directo indicando tu nombre y
+      ciudad, y te responderemos a la brevedad.
+    </p>
+  </div>
+</div>
+
     </section>
   </main>
 
@@ -1280,6 +1335,7 @@
   </script>
 </body>
 </html>
+
 
 
 

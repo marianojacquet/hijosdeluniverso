@@ -190,6 +190,22 @@
       color: var(--accent);
       box-shadow: 0 0 12px rgba(245, 199, 106, 0.4);
     }
+    .brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  object-fit: contain;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6), transparent 70%);
+  box-shadow: 0 0 12px rgba(245, 199, 106, 0.4);
+}
+
 
     .brand-title {
       font-weight: 600;
@@ -762,15 +778,22 @@
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-inner">
-      <div class="brand">
-        <div class="brand-symbol">∴</div>
-        <div>
-          <div class="brand-title">Hijos del Universo N° 113</div>
-          <div class="brand-subtitle">
-            Bajo los auspicios de la Gran Logia Argentina de Libres y Aceptados Masones
-          </div>
-        </div>
-      </div>
+       <div class="brand">
+  <div class="brand-mark">
+    <img
+      src="/logo-hijos-universo.png"
+      alt="Logo de la Logia Hijos del Universo N° 113"
+      class="brand-logo"
+    />
+  </div>
+  <div>
+    <div class="brand-title">Hijos del Universo N° 113</div>
+    <div class="brand-subtitle">
+      Bajo los auspicios de la Gran Logia Argentina de Libres y Aceptados Masones
+    </div>
+  </div>
+</div>
+
       <nav class="nav-links">
         <a href="#inicio">Inicio</a>
         <a href="#que-es">Masonería</a>
@@ -1335,6 +1358,7 @@
   </script>
 </body>
 </html>
+
 
 
 
